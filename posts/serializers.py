@@ -2,11 +2,11 @@ from rest_framework import serializers
 from .models import Post
 
 
-class ProfileSerializer(serializers.ModelSerializer):
+class PostSerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')
     is_owner = serializers.SerializerMethodField()
     profile_id = serializers.ReadOnlyField(source='owner.profile.id')
-    profile_image = serializers.ReadOnlyField(sources='owner.profile.images.url')
+    profile_image = serializers.ReadOnlyField(source='owner.profile.images.url')
 
     def validate_image(self, value):
         if value.size > 1024 * 1024 * 2:
