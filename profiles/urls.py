@@ -5,3 +5,5 @@ urlpatterns = [
     path('profiles/', views.ProfilesList.as_view()),
     path('profiles/<int:pk>/', views.ProfileDetail.as_view()),
 ]
+
+  
