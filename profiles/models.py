@@ -13,7 +13,7 @@ class Profile(models.Model):
         upload_to='images/', default='../default_profile_h1ovmt'
     )
 
-    class Meta: 
+    class Meta:
         ordering = ['-created_at']
 
     def __str__(self):
